@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبار تفاعلي | الفصل 31 و32 - منصة كودجي</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#07111f;--panel:#101e31;--panel2:#14263d;--line:#263d59;--cyan:#22d3ee;--blue:#3b82f6;--green:#34d399;--muted:#9fb2c9}
+*{box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:radial-gradient(circle at 10% 0%,#123252 0,transparent 32%),radial-gradient(circle at 90% 10%,#14284b 0,transparent 28%),var(--bg);color:#eaf3ff}
+.code{font-family:'Fira Code',monospace;direction:ltr;text-align:left;white-space:pre-wrap;background:#07101d;border:1px solid #263d59;border-radius:14px;padding:16px;color:#c8e6ff;line-height:1.8;overflow:auto;font-size:13px}
+.panel{background:linear-gradient(145deg,rgba(20,38,61,.97),rgba(12,26,44,.97));border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 35px #0003}
+.tag{border:1px solid #31516e;background:#102b43;color:#8deaff;border-radius:999px;padding:5px 12px;font-size:12px}
+.qcard{background:#0c1a2b;border:1px solid #29415d;border-radius:16px;padding:18px}
+.option{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;margin-top:9px;border:1px solid #2b4562;border-radius:12px;cursor:pointer;transition:.2s}
+.option:hover{border-color:#22d3ee;background:#102b43}.option input{margin-top:6px;accent-color:#22d3ee}
+.option.correct{border-color:#34d399;background:#0d332e}.option.wrong{border-color:#fb7185;background:#3b1723}
+.btn{border-radius:12px;padding:11px 18px;font-weight:800;transition:.2s}.primary{background:linear-gradient(90deg,#0891b2,#2563eb);color:white}.secondary{background:#20364f;border:1px solid #3b5878}
+.feedback{display:none;margin-top:12px;padding:12px;border-radius:12px;font-size:13px}.feedback.show{display:block}.good{background:#0d332e;color:#a7f3d0;border:1px solid #16845f}.bad{background:#3b1723;color:#fecdd3;border:1px solid #9f334e}
+.small{font-size:13px;color:var(--muted)}.step{border-right:3px solid #22d3ee;padding:4px 14px;margin:12px 0}
+</style>
+</head>
+<body>
+<header class="border-b border-slate-700/70 bg-slate-950/60">
+ <div class="max-w-6xl mx-auto px-4 py-5 flex flex-wrap items-center justify-between gap-3">
+  <div class="flex items-center gap-3"><div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-slate-950 text-2xl"><i class="fa-solid fa-code"></i></div><div><div class="font-black text-xl">منصة <span class="text-cyan-300">كودجي</span></div><div class="text-xs text-slate-400">Codegy Interactive Learning</div></div></div>
+  <div class="flex gap-2 flex-wrap"><span class="tag">JavaScript</span><span class="tag">الفصل 31 + الفصل 32</span><span class="tag">اختبار بتصحيح تلقائي</span></div>
+ </div>
+</header>
+<main class="max-w-6xl mx-auto px-4 py-7">
+<section class="panel p-6 md:p-8 mb-6 relative overflow-hidden">
+ <div class="absolute -left-10 -top-16 w-56 h-56 bg-cyan-400/10 blur-3xl rounded-full"></div>
+ <div class="relative">
+  <div class="text-cyan-300 font-bold mb-2"><i class="fa-solid fa-graduation-cap ml-2"></i>اختبر فهمك وطبّق بنفسك</div>
+  <h1 class="text-3xl md:text-4xl font-black leading-tight mb-3">اختبار البرمجة التفاعلي<br><span class="text-cyan-300">الفصل 31 والفصل 32</span></h1>
+  <p class="text-slate-300 leading-8 max-w-3xl">راجع الأكواد ومخرجاتها أولًا، ثم أجب عن الأسئلة. سيظهر التصحيح والدرجة والتفسير مباشرة بعد تسليم الاختبار.</p>
+  <div class="grid md:grid-cols-3 gap-3 mt-6">
+   <div class="bg-slate-900/50 rounded-xl p-4"><div class="text-slate-400 text-xs">عدد الأسئلة</div><div class="text-2xl font-black">20 سؤالًا</div></div>
+   <div class="bg-slate-900/50 rounded-xl p-4"><div class="text-slate-400 text-xs">نظام التقييم</div><div class="text-2xl font-black">تصحيح فوري</div></div>
+   <div class="bg-slate-900/50 rounded-xl p-4"><div class="text-slate-400 text-xs">الموضوعات</div><div class="text-lg font-black">الدوال والحلقات والشروط</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="panel p-5 md:p-7 mb-6">
+ <div class="flex items-center gap-3 mb-4"><span class="text-cyan-300 text-2xl"><i class="fa-solid fa-book-open"></i></span><div><h2 class="text-xl font-extrabold">أولًا: مراجعة الأكواد</h2><p class="small">اقرأ كل كود ولاحظ القيم التي يعرضها في وحدة التحكم.</p></div></div>
+ <div class="mb-6">
+  <h3 class="font-extrabold text-lg text-cyan-200 mb-2">الفصل 31 — الدالة sum() وحساب أسرع زمن</h3>
+  <div class="code">function sum(freestyle, breaststroke, backstroke) {
+  let time = freestyle + breaststroke + backstroke;
+  return time;
+}
+let teamRed = sum(39.5, 60.5, 58.5);
+console.log(teamRed);
+let teamBlue = sum(40, 62, 58);
+console.log(teamBlue);
+let teamGreen = sum(41, 59.5, 60);
+console.log(teamGreen);
+console.log("The fastest time is" +
+ Math.min(teamRed, teamBlue, teamGreen)
+);</div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
+   <div class="bg-slate-900/70 rounded-xl p-3"><div class="small">teamRed</div><b class="text-xl text-cyan-200">158.5</b></div>
+   <div class="bg-slate-900/70 rounded-xl p-3"><div class="small">teamBlue</div><b class="text-xl text-cyan-200">160</b></div>
+   <div class="bg-slate-900/70 rounded-xl p-3"><div class="small">teamGreen</div><b class="text-xl text-cyan-200">160.5</b></div>
+   <div class="bg-slate-900/70 rounded-xl p-3"><div class="small">أقل زمن</div><b class="text-xl text-green-300">158.5</b></div>
+  </div>
+  <p class="small mt-3">الدالة تجمع الأزمنة الثلاثة وتُرجع الناتج باستخدام <code class="text-cyan-200">return</code>. ثم تُستخدم <code class="text-cyan-200">Math.min()</code> لاختيار أصغر قيمة.</p>
+ </div>
+ <div class="mb-6">
+  <h3 class="font-extrabold text-lg text-cyan-200 mb-2">الفصل 32 — عدّ قيم Yes وNo</h3>
+  <div class="code">let volunteerList = ["Yes", "No", "Yes", "Yes", "Yes", "Yes", "No", "No", "Yes", "Yes", "Yes", "No", "Yes", "No"];
+let count = 0;
+for (let day of volunteerList) {
+  if (day == "Yes") {
+    count++;
+  }
+}
+console.log(count);</div>
+  <p class="small mt-2">عند البحث عن <b class="text-green-300">Yes</b> تكون النتيجة <b>9</b>. وعند استبدال الشرط بـ <code class="text-cyan-200">day == "No"</code> تكون النتيجة <b>5</b>.</p>
+  <div class="code mt-3">let count = 0;
+for (let day of volunteerList) {
+  if (day == "No") {
+    count++;
+  }
+}
+console.log(count);</div>
+ </div>
+ <div class="mb-6">
+  <h3 class="font-extrabold text-lg text-cyan-200 mb-2">الفصل 32 — الشروط المتداخلة: الطقس وعدد الأصدقاء</h3>
+  <div class="code">let weather = "sunny";
+let friends = 10;
+
+if (weather == "sunny") {
+  if (friends >= 10) {
+    console.log("play baseball");
+  } else {
+    console.log("play basketball");
+  }
+} else {
+  console.log("read a book");
+}</div>
+  <p class="small mt-2">الطقس مشمس، وعدد الأصدقاء 10؛ لذلك يتحقق الشرطان وتكون النتيجة <b class="text-green-300">play baseball</b>.</p>
+ </div>
+ <div>
+  <h3 class="font-extrabold text-lg text-cyan-200 mb-2">الفصل 32 — الشروط المتداخلة: نوع الساندويتش</h3>
+  <div class="code">let sandwichType = "savory";
+let savory = "tuna";
+if (sandwichType == "savory") {
+  if (savory == "tuna") {
+    console.log("Exchange with Cody");
+  } else {
+    console.log("Eat ham sandwich");
+  }
+} else {
+  console.log("Eat strawberry jam sandwich");
+}</div>
+  <p class="small mt-2">بما أن <code class="text-cyan-200">sandwichType</code> تساوي savory و<code class="text-cyan-200">savory</code> تساوي tuna، فالنتيجة <b class="text-green-300">Exchange with Cody</b>.</p>
+ </div>
+</section>
+
+<section class="panel p-5 md:p-7 mb-6">
+ <div class="flex items-center gap-3 mb-5"><span class="text-cyan-300 text-2xl"><i class="fa-solid fa-list-check"></i></span><div><h2 class="text-xl font-extrabold">ثانيًا: الاختبار</h2><p class="small">اكتب اسم الطالب، ثم اختر إجابة واحدة لكل سؤال.</p></div></div>
+ <label class="block font-bold mb-2" for="studentName">اسم الطالب</label>
+ <input id="studentName" class="w-full md:w-1/2 bg-slate-950 border border-slate-600 rounded-xl px-4 py-3 text-white outline-none focus:border-cyan-400" placeholder="اكتب اسمك هنا">
+ <div class="flex justify-between items-center mt-6 mb-3"><span class="font-bold">تقدم الإجابة</span><span id="progressText" class="small">0 / 20</span></div>
+ <div class="w-full bg-slate-800 rounded-full h-2 mb-6"><div id="progressBar" class="h-2 rounded-full bg-gradient-to-l from-cyan-400 to-blue-500" style="width:0%"></div></div>
+ <div id="questions" class="space-y-4"></div>
+ <div class="flex flex-wrap gap-3 mt-7">
+  <button class="btn primary" onclick="gradeQuiz()"><i class="fa-solid fa-check-double ml-2"></i>تسليم الاختبار والتصحيح</button>
+  <button class="btn secondary" onclick="resetQuiz()"><i class="fa-solid fa-rotate-right ml-2"></i>إعادة الاختبار</button>
+ </div>
+</section>
+
+<section id="result" class="panel p-5 md:p-7 mb-6 hidden">
+ <div class="text-center">
+  <div class="text-cyan-300 text-4xl mb-2"><i class="fa-solid fa-award"></i></div>
+  <h2 class="text-2xl font-black">نتيجة الاختبار</h2>
+  <div id="score" class="text-5xl font-black text-green-300 my-4">0 / 20</div>
+  <p id="resultMessage" class="text-slate-300"></p>
+ </div>
+ <div id="answerSummary" class="mt-6 space-y-2"></div>
+ <div class="mt-6">
+  <label class="block font-bold mb-2">تقرير الطالب</label>
+  <textarea id="report" rows="5" class="w-full bg-slate-950 border border-slate-600 rounded-xl p-3 text-sm" readonly></textarea>
+  <div class="flex flex-wrap gap-3 mt-3">
+   <button class="btn primary" onclick="copyReport()"><i class="fa-regular fa-copy ml-2"></i>نسخ التقرير</button>
+   <button class="btn secondary" onclick="sendWhatsApp()"><i class="fa-brands fa-whatsapp ml-2"></i>إرسال التقرير عبر واتساب</button>
+  </div>
+ </div>
+</section>
+<footer class="text-center text-slate-500 text-sm py-5">منصة كودجي — مهندس أندرو مجدي <span class="text-cyan-300">|</span> تعلم البرمجة بالتطبيق</footer>
+</main>
+<script>
+const questions = [
+{section:"الفصل 31 — الدوال والحساب",q:"ما وظيفة الدالة sum() في الكود؟",o:["حساب أكبر زمن","جمع الأزمنة الثلاثة وإرجاع الناتج","طباعة اسم الفريق","عدّ عدد السباحين"],a:1,e:"الدالة تجمع freestyle وbreaststroke وbackstroke ثم تُرجع المجموع باستخدام return."},
+{section:"الفصل 31 — الدوال والحساب",q:"ما قيمة teamRed؟",o:["158.5","159.5","160","160.5"],a:0,e:"39.5 + 60.5 + 58.5 = 158.5."},
+{section:"الفصل 31 — الدوال والحساب",q:"ما قيمة teamBlue؟",o:["158.5","160","160.5","162"],a:1,e:"40 + 62 + 58 = 160."},
+{section:"الفصل 31 — الدوال والحساب",q:"ما قيمة teamGreen؟",o:["158.5","159","160","160.5"],a:3,e:"41 + 59.5 + 60 = 160.5."},
+{section:"الفصل 31 — الدوال والحساب",q:"ما وظيفة Math.min(teamRed, teamBlue, teamGreen)؟",o:["إيجاد أكبر قيمة","إيجاد أصغر قيمة","جمع القيم","ترتيب الفرق أبجديًا"],a:1,e:"Math.min() تُرجع أصغر رقم من القيم المرسلة إليها."},
+{section:"الفصل 31 — الدوال والحساب",q:"أي فريق حقق أقل زمن؟",o:["teamRed","teamBlue","teamGreen","جميع الفرق متساوية"],a:0,e:"أقل زمن هو 158.5، وهو زمن teamRed."},
+{section:"الفصل 31 — الدوال والحساب",q:"ما دور return time داخل الدالة؟",o:["عرض time على الشاشة مباشرة","إرجاع قيمة time إلى مكان استدعاء الدالة","إنشاء مصفوفة","إيقاف المتصفح"],a:1,e:"return تُرجع قيمة من الدالة لتُخزّن أو تُستخدم عند استدعائها."},
+{section:"الفصل 32 — المصفوفات والحلقات",q:"ما نوع البيانات المخزنة في volunteerList؟",o:["أرقام","قيم نصية داخل مصفوفة","قيمة منطقية واحدة","دالة"],a:1,e:"القائمة مصفوفة تحتوي على النصوص Yes وNo."},
+{section:"الفصل 32 — المصفوفات والحلقات",q:"ماذا تعني for (let day of volunteerList)؟",o:["تكرار المرور على عناصر المصفوفة","إضافة عنصر جديد","حذف المصفوفة","إيقاف الحلقة عند أول عنصر"],a:0,e:"for...of تمر على عناصر المصفوفة واحدًا بعد الآخر."},
+{section:"الفصل 32 — المصفوفات والحلقات",q:"ما القيمة النهائية للمتغير count عند البحث عن Yes؟",o:["5","8","9","14"],a:2,e:"يوجد 9 عناصر تساوي Yes في القائمة."},
+{section:"الفصل 32 — المصفوفات والحلقات",q:"ما القيمة النهائية للمتغير count عند البحث عن No؟",o:["4","5","9","14"],a:1,e:"يوجد 5 عناصر تساوي No في القائمة."},
+{section:"الفصل 32 — المصفوفات والحلقات",q:"ما وظيفة count++؟",o:["تقليل count بمقدار 1","زيادة count بمقدار 1","جعل count يساوي صفرًا","مقارنة count بنص"],a:1,e:"عامل ++ يزيد قيمة المتغير بمقدار واحد."},
+{section:"الفصل 32 — الشروط المتداخلة",q:"في كود الطقس، ما قيمة weather؟",o:["rainy","cloudy","sunny","windy"],a:2,e:'القيمة المعطاة في الكود هي "sunny".'},
+{section:"الفصل 32 — الشروط المتداخلة",q:"في كود الطقس، ما المخرج الذي سيظهر؟",o:["play basketball","read a book","play baseball","لا يظهر شيء"],a:2,e:"الطقس sunny، وعدد الأصدقاء 10؛ لذلك يتحقق friends >= 10 ويُطبع play baseball."},
+{section:"الفصل 32 — الشروط المتداخلة",q:"ماذا يحدث لو كانت friends تساوي 8 مع بقاء weather = sunny؟",o:["play baseball","play basketball","read a book","Exchange with Cody"],a:1,e:"الشرط الخارجي صحيح، لكن friends >= 10 خطأ؛ لذلك ينفذ else الداخلي."},
+{section:"الفصل 32 — الشروط المتداخلة",q:"ماذا يحدث لو كانت weather = rainy؟",o:["play baseball","play basketball","read a book","Eat ham sandwich"],a:2,e:"إذا لم يتحقق الشرط الخارجي weather == sunny، ينفذ else الخارجي."},
+{section:"الفصل 32 — الشروط المتداخلة",q:"في كود الساندويتش، ما قيمة sandwichType؟",o:["sweet","savory","tuna","ham"],a:1,e:'القيمة المعطاة هي "savory".'},
+{section:"الفصل 32 — الشروط المتداخلة",q:"ما المخرج الفعلي لكود الساندويتش؟",o:["Eat ham sandwich","Eat strawberry jam sandwich","Exchange with Cody","play baseball"],a:2,e:"الشرط الأول صحيح لأن النوع savory، والشرط الداخلي صحيح لأن savory تساوي tuna."},
+{section:"الفصل 32 — الشروط المتداخلة",q:"لو كانت savory = chicken مع بقاء sandwichType = savory، فما المخرج؟",o:["Exchange with Cody","Eat ham sandwich","Eat strawberry jam sandwich","read a book"],a:1,e:"يدخل البرنامج إلى الشرط الخارجي، لكن الشرط الداخلي savory == tuna يكون خطأ، فينفذ else الداخلي."},
+{section:"الفصل 32 — الشروط المتداخلة",q:"لو كانت sandwichType = sweet، فما المخرج؟",o:["Exchange with Cody","Eat ham sandwich","Eat strawberry jam sandwich","play basketball"],a:2,e:"الشرط الخارجي sandwichType == savory سيكون خطأ، فينفذ else الخارجي."}
+];
+let submitted=false;
+function renderQuestions(){
+ const root=document.getElementById('questions');root.innerHTML='';
+ questions.forEach((q,i)=>{
+  const card=document.createElement('div');card.className='qcard';card.id='q'+i;
+  card.innerHTML=`<div class="flex flex-wrap justify-between gap-2 mb-2"><span class="tag">${q.section}</span><span class="small">السؤال ${i+1} من ${questions.length}</span></div><h3 class="font-bold leading-8">${i+1}. ${q.q}</h3><div class="mt-2">${q.o.map((op,j)=>`<label class="option" id="opt-${i}-${j}"><input type="radio" name="q${i}" value="${j}" onchange="updateProgress()"><span>${String.fromCharCode(1571+j)}. ${op}</span></label>`).join('')}</div><div id="fb${i}" class="feedback"></div>`;
+  root.appendChild(card);
+ });
+}
+function updateProgress(){let n=questions.filter((q,i)=>document.querySelector(`input[name="q${i}"]:checked`)).length;document.getElementById('progressText').textContent=`${n} / ${questions.length}`;document.getElementById('progressBar').style.width=(n/questions.length*100)+'%';}
+function gradeQuiz(){
+ if(submitted)return;
+ const name=document.getElementById('studentName').value.trim();
+ if(!name){alert('من فضلك اكتب اسم الطالب أولًا.');document.getElementById('studentName').focus();return;}
+ let score=0,details=[];
+ questions.forEach((q,i)=>{
+  const selected=document.querySelector(`input[name="q${i}"]:checked`);const val=selected?Number(selected.value):-1;const correct=val===q.a;if(correct)score++;
+  q.o.forEach((_,j)=>{const el=document.getElementById(`opt-${i}-${j}`);el.style.cursor='default';if(j===q.a)el.classList.add('correct');if(j===val&&!correct)el.classList.add('wrong');});
+  const fb=document.getElementById('fb'+i);fb.className='feedback show '+(correct?'good':'bad');fb.innerHTML=`<b>${correct?'إجابة صحيحة ✓':'إجابة غير صحيحة ✗'}</b><br>الإجابة الصحيحة: ${q.o[q.a]}<br><span class="opacity-90">${q.e}</span>`;
+  details.push(`${i+1}) ${correct?'صحيح':'خطأ'} — الإجابة الصحيحة: ${q.o[q.a]}`);
+ });
+ submitted=true;document.querySelectorAll('input[type=radio]').forEach(x=>x.disabled=true);
+ const pct=Math.round(score/questions.length*100);
+ document.getElementById('score').textContent=`${score} / ${questions.length}`;
+ document.getElementById('resultMessage').textContent=pct>=90?'ممتاز! فهمك للأكواد قوي جدًا.':pct>=75?'أداء جيد جدًا، راجع الأسئلة التي أخطأت فيها.':pct>=50?'نتيجة جيدة كبداية؛ راجع التفسيرات وحاول مرة أخرى.':'راجع الأكواد ومخرجاتها ثم أعد الاختبار.';
+ document.getElementById('answerSummary').innerHTML=`<div class="grid grid-cols-3 gap-2 text-center"><div class="bg-slate-900 rounded-xl p-3"><div class="small">الصحيحة</div><b class="text-green-300 text-2xl">${score}</b></div><div class="bg-slate-900 rounded-xl p-3"><div class="small">الخاطئة</div><b class="text-rose-300 text-2xl">${questions.length-score}</b></div><div class="bg-slate-900 rounded-xl p-3"><div class="small">النسبة</div><b class="text-cyan-300 text-2xl">${pct}%</b></div></div>`;
+ const report=`تقرير اختبار البرمجة — الفصل 31 والفصل 32\nاسم الطالب: ${name}\nالدرجة: ${score} من ${questions.length}\nالنسبة: ${pct}%\n\nتفاصيل الإجابات:\n${details.join('\n')}\n\nمنصة كودجي — مهندس أندرو مجدي`;
+ document.getElementById('report').value=report;const res=document.getElementById('result');res.classList.remove('hidden');res.scrollIntoView({behavior:'smooth'});
+}
+function resetQuiz(){if(!confirm('هل تريد مسح الإجابات والبدء من جديد؟'))return;submitted=false;document.getElementById('studentName').value='';renderQuestions();updateProgress();document.getElementById('result').classList.add('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+function copyReport(){const t=document.getElementById('report');t.select();document.execCommand('copy');alert('تم نسخ التقرير.');}
+function sendWhatsApp(){const txt=encodeURIComponent(document.getElementById('report').value);window.open('https://wa.me/?text='+txt,'_blank');}
+renderQuestions();
+</script>
+</body>
+</html>
